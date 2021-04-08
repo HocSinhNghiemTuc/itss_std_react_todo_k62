@@ -33,10 +33,7 @@ function Todo() {
         ITSS ToDoアプリ
       </div>
       {items.map(item => (
-        <label className="panel-block">
-            <input type="checkbox" />
-            {item.text}
-        </label>
+        <TodoItem item={item} key={item.key}/>
       ))}
       <div className="panel-block">
         {items.length} items
