@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 export default firebase;
 export const db_todo = firebase.firestore().collection("todo");
 export const db_user = firebase.firestore().collection("user");
+export const storageImage = firebase.storage().ref();
 
 export const uiConfig = {
     // Popup signin flow rather than redirect flow.
@@ -24,14 +25,6 @@ export const uiConfig = {
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     ],
 };
-// export const getFirebaseItems = async () => {
-//     try {
-//         const  = await db.get();
-//         return snapshot.docs.map(
-//             (doc) => ({...doc.data(), id: doc.id})
-//         );
-//     } catch (err) {
-//         console.log(err);
-//         return [];
-//     }
-// }
+export const saveImage = (url) => {
+
+};
