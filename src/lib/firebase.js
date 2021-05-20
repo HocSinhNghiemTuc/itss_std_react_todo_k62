@@ -10,3 +10,15 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore().collection("todo");
+// export const getFirebaseItems = async () => {
+//     try {
+//         const  = await db.get();
+//         return snapshot.docs.map(
+//             (doc) => ({...doc.data(), id: doc.id})
+//         );
+//     } catch (err) {
+//         console.log(err);
+//         return [];
+//     }
+// }
