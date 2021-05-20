@@ -5,8 +5,8 @@ import Input from './Input';
 import Filter from './Filter';
 /* ライブラリ */
 import {getKey} from "../lib/util";
-import useStorageFirebase from "../hooks/storage_firebase";
-
+import useStorageTodo from "../hooks/storage_todo";
+import Auth from "./Auth";
 /* 
   【Todoのデータ構成】
 　・key：Todoを特定するID（String）
@@ -17,7 +17,7 @@ import useStorageFirebase from "../hooks/storage_firebase";
 /* カスタムフック */
 
 function Todo() {
-    const [items, addItem, updateItem, cleanItems] = useStorageFirebase();
+    const [items, addItem, updateItem, cleanItems] = useStorageTodo();
 
     const handleCheckTodoItem = (item) => {
         updateItem(item);
@@ -48,6 +48,7 @@ function Todo() {
     };
     return (
         <div className="panel">
+            <Auth />
             <div className="panel-heading">
                 ITSS ToDoアプリ
             </div>
